@@ -13,13 +13,6 @@ public class EmployeeServiceImplement implements EmployeeService {
     @Autowired
     private EmployeeMapper employeeMapper;
 
-    /*
-    @Autowired
-    EmployeeServiceImplement(EmployeeMapper employeeMapper){
-        this.employeeMapper = employeeMapper;
-    }
-    */
-
     @Override
     public List<Map<String, Object>> getEmployee() {
         return employeeMapper.getEmployee();
