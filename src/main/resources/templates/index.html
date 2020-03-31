@@ -64,7 +64,7 @@
       <!-- Top Bar End-->
       <nav class="navbar navbar-expand-lg bg-transparent border-0 shadow-0 navbar-light px-lg-5 "><a href="index.html" class="navbar-brand">Varkala</a>
         <ul class="list-inline mb-0 d-block d-lg-none">
-          <li class="list-inline-item mr-3"><a href="#" data-toggle="modal" data-target="#loginModal" class="text-dark text-hover-primary">
+          <li class="list-inline-item mr-3"><a href="#" id="btnLoginModal1" data-toggle="modal" data-target="#loginModal" class="text-dark text-hover-primary">
               <svg class="svg-icon navbar-icon">
                 <use xlink:href="#avatar-1"> </use>
               </svg></a></li>
@@ -251,8 +251,8 @@
             </li>
             <!-- /Megamenu end-->
             <li class="nav-item dropdown"><a id="docsDropdown" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="nav-link dropdown-toggle">Docs</a>
-              <div aria-labelledby="homeDropdown" class="dropdown-menu"><a href="docs/index.html" class="dropdown-item">Introduction </a><a href="docs/directory-structure.html" class="dropdown-item">Directory structure </a><a href="docs/gulp.html" class="dropdown-item">Gulp </a><a href="docs/customizing-css.html" class="dropdown-item">Customizing CSS </a><a href="docs/credits.html" class="dropdown-item">Credits </a><a href="docs/changelog.html" class="dropdown-item">Changelog </a>
-                <div class="dropdown-divider"></div><a href="docs/components-bootstrap.html" class="dropdown-item">Bootstrap </a><a href="docs/components-theme.html" class="dropdown-item">Theme </a>
+              <div aria-labelledby="homeDropdown" class="dropdown-menu"><a href="../static/docs/index.html" class="dropdown-item">Introduction </a><a href="../static/docs/directory-structure.html" class="dropdown-item">Directory structure </a><a href="../static/docs/gulp.html" class="dropdown-item">Gulp </a><a href="../static/docs/customizing-css.html" class="dropdown-item">Customizing CSS </a><a href="../static/docs/credits.html" class="dropdown-item">Credits </a><a href="../static/docs/changelog.html" class="dropdown-item">Changelog </a>
+                <div class="dropdown-divider"></div><a href="../static/docs/components-bootstrap.html" class="dropdown-item">Bootstrap </a><a href="../static/docs/components-theme.html" class="dropdown-item">Theme </a>
               </div>
             </li>
           </ul>
@@ -269,7 +269,7 @@
             </div>
           </form>
           <ul class="list-inline mb-0 d-none d-lg-block">
-            <li class="list-inline-item mr-3"><a href="#" data-toggle="modal" data-target="#loginModal" class="text-dark text-hover-primary">
+            <li class="list-inline-item mr-3"><a href="#" data-toggle="modal" id="btnLoginModal2" data-target="#loginModal" class="text-dark text-hover-primary">
                 <svg class="svg-icon navbar-icon">
                   <use xlink:href="#avatar-1"> </use>
                 </svg></a></li>
@@ -789,7 +789,7 @@
         </div>
       </div>
     </div>
-    <div style="background-image: url(img/photo/deal-plain.jpg);" class="py-6 bg-cover bg-cover-right">
+    <div style="background-image: url('img/photo/deal-plain.jpg');" class="py-6 bg-cover bg-cover-right">
       <div class="container">
         <div class="row">
           <div class="col-lg-10 col-xl-6">
@@ -1014,10 +1014,11 @@
             <hr class="mb-3">
             <div class="tab-content">
               <div id="loginModalTabLogin" role="tabpanel" aria-labelledby="loginModalLinkLogin" class="tab-pane active fade show px-3">
-                <form action="customer-orders.html" method="get">
+                <!--<form action="customer-orders.html" method="get">-->
+                <form>
                   <div class="form-group">
                     <label for="email" class="form-label">Email</label>
-                    <input id="email" type="text" class="form-control">
+                    <input id="loginEmail" type="text" class="form-control">
                   </div>
                   <div class="form-group">
                     <div class="row">
@@ -1035,18 +1036,20 @@
                     </div>
                   </div>
                   <div class="form-group">
-                    <button type="submit" class="btn btn-block btn-outline-dark"><i class="fa fa-sign-in-alt mr-2"></i> Log in</button>
+                    <button id="btnLogin" type="button" class="btn btn-block btn-outline-dark"><i class="fa fa-sign-in-alt mr-2"></i> Log in</button>
                   </div>
                 </form>
                 <hr data-content="OR" class="my-3 hr-text letter-spacing-2">
                 <div class="text-center">
-                  <button data-toggle="tooltip" title="Connect with Facebook" class="btn btn btn-outline-primary letter-spacing-0"><i class="fa-fw fa-facebook-f fab"></i><span class="sr-only">Connect with Facebook</span></button>
+                  <!--<span class="fb-login-button" id="btnFacebookLogin" data-width="" data-size="small" data-button-type="login_with" data-layout="default" data-auto-logout-link="true" data-use-continue-as="true"></span>-->
+                  <button data-toggle="tooltip" id="btnFacebookLogin" title="Connect with Facebook" class="btn btn btn-outline-primary letter-spacing-0"><i class="fa-fw fa-facebook-f fab"></i><span class="sr-only">Connect with Facebook</span></button>
                   <button data-toggle="tooltip" title="Connect with Google" class="btn btn btn-outline-muted letter-spacing-0"><i class="fa-fw fa-google fab"></i><span class="sr-only">Connect with Google</span></button>
                 </div>
               </div>
               <div id="loginModalTabRegister" role="tabpanel" aria-labelledby="loginModalLinkRegister" class="tab-pane fade px-3">
                 <p class="text-muted text-sm">The bedding was hardly able to cover it and seemed ready to slide off any moment. His many legs, pit.                                            </p>
-                <form action="customer-orders.html" method="get">
+                <!--<form action="customer-orders.html" method="get">-->
+                <form onSubmit="return false;">
                   <div class="form-group">
                     <label for="registerName" class="form-label">Name</label>
                     <input id="registerName" type="text" class="form-control">
@@ -1060,13 +1063,22 @@
                     <input id="registerPassword" type="password" class="form-control">
                   </div>
                   <div class="form-group text-center">
-                    <button type="submit" class="btn btn-block btn-outline-dark"><i class="far fa-user mr-2"></i>Register                       </button>
+                    <button id="btnRegister" class="btn btn-block btn-outline-dark"><i class="far fa-user mr-2"></i>Register                       </button>
                   </div>
                 </form>
                 <hr data-content="OR CONNECT WITH" class="my-3 hr-text letter-spacing-2">
                 <div class="text-center">
-                  <button data-toggle="tooltip" title="Connect with Facebook" class="btn btn btn-outline-primary letter-spacing-0"><i class="fa-fw fa-facebook-f fab"></i><span class="sr-only">Connect with Facebook</span></button>
-                  <button data-toggle="tooltip" title="Connect with Google" class="btn btn btn-outline-muted letter-spacing-0"><i class="fa-fw fa-google fab"></i><span class="sr-only">Connect with Google                                      </span></button>
+                  <button data-toggle="tooltip" title="Connect with Facebook" class="btn btn btn-outline-primary letter-spacing-0" onclick="location.href='javascript:facebookRegister()'"><i class="fa-fw fa-facebook-f fab"></i><span class="sr-only">Connect with Facebook</span></button>
+                  <button data-toggle="tooltip" title="Connect with Google" class="btn btn btn-outline-muted letter-spacing-0" onclick="location.href='javascript:googleRegister()'"><i class="fa-fw fa-google fab"></i><span class="sr-only">Connect with Google                                      </span></button>
+
+                  <!--<button data-toggle="tooltip" title="Connect with Facebook" class="btn btn btn-outline-primary letter-spacing-0"><i class="fa-fw fa-facebook-f fab"></i><span class="sr-only">Connect with Facebook</span></button>
+                  <button data-toggle="tooltip" title="Connect with Google" class="btn btn btn-outline-muted letter-spacing-0"><i class="fa-fw fa-google fab"></i><span class="sr-only">Connect with Google                                      </span></button>-->
+                 <!-- <span class="sr-only">
+                    <a href="/oauth/facebook/authenticate?redirectUrl=" provider="facebook" class="btn btn-facebook btn-block"><i class="fa fa-facebook fa-fw"></i>Facebook</a>
+                  </span>
+                  <span class="sr-only">
+                    <a href="/oauth/google/authenticate?redirectUrl=" provider="google" class="btn btn-google btn-block"><i class="fa fa-google fa-fw"></i>Google</a>
+                  </span>-->
                 </div>
               </div>
             </div>
@@ -1267,5 +1279,29 @@
     <!-- Main Theme files-->
     <script src="js/sliders-init.js"></script>
     <script src="js/theme.js"></script>
+    <script src="js/login/login.js"></script>
+
+    <div id="fb-root"></div>
+    <script>
+      window.fbAsyncInit = function() {
+        FB.init({
+          appId      : '161671948210067',
+          cookie     : true,
+          xfbml      : true,
+          version    : 'v6.0'
+        });
+
+        FB.AppEvents.logPageView();
+
+      };
+
+      (function(d, s, id){
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) {return;}
+        js = d.createElement(s); js.id = id;
+        js.src = "https://connect.facebook.net/ko_KR/sdk.js#xfbml=1&version=v6.0&appId=161671948210067&autoLogAppEvents=1";
+        fjs.parentNode.insertBefore(js, fjs);
+      }(document, 'script', 'facebook-jssdk'));
+    </script>
   </body>
 </html>

@@ -1,7 +1,7 @@
-package com.johousev01.springboot.service.impl;
+package com.johousev01.springboot.service.employee.impl;
 
 import com.johousev01.springboot.mapper.employee.EmployeeMapper;
-import com.johousev01.springboot.service.EmployeeService;
+import com.johousev01.springboot.service.employee.EmployeeService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -17,4 +17,5 @@ public class EmployeeServiceImplement implements EmployeeService {
     public List<Map<String, Object>> getEmployee() {
         return employeeMapper.getEmployee();
     }
+
 }

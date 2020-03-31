@@ -1,8 +1,9 @@
-package com.johousev01.springboot.service;
+package com.johousev01.springboot.service.employee;
 
 import java.util.List;
 import java.util.Map;
 
 public interface EmployeeService {
     List<Map<String, Object>> getEmployee();
+
 }

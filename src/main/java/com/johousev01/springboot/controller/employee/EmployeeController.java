@@ -1,6 +1,6 @@
 package com.johousev01.springboot.controller.employee;
 
-import com.johousev01.springboot.service.EmployeeService;
+import com.johousev01.springboot.service.employee.EmployeeService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;

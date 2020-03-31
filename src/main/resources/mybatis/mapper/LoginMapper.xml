@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.johousev01.springboot.mapper.login.LoginMapper">
+    <insert id="saveRegister" parameterType="java.util.HashMap">
+        INSERT INTO TIL_USER_ID
+                VALUES(
+                  #{REGISTER_NAME},
+                  #{REGISTER_EMAIL},
+                  #{REGISTER_PASSWORD},
+                  NOW(),
+                  NOW()
+                )
+    </insert>
+
+    <select id="selectLogin" resultType="java.util.HashMap">
+        SELECT
+               USER_ID
+              ,EMAIL
+              ,RGSTR_DTM
+              ,LAST_CHG_DTM
+         FROM TIL_USER_ID
+        WHERE EMAIL=#{LOGIN_EMAIL}
+          AND PASSWORD=#{LOGIN_PASSWORD}
+    </select>
+</mapper>
